@@ -74,7 +74,7 @@ def get_binary():
     # this integer will be used as an input parameter for decimal to binary and the result updated
     # in the 8 checkboxes
 
-    decimal = e1.get()
+    decimal = int(e1.get())
 
     binary = decimal_to_binary(decimal)
     e1.delete(0,END)
@@ -127,6 +127,5 @@ cb128.grid(row=3,column=8)
 b1.grid(row=4,column=1,columnspan=4)
 b2.grid(row=4,column=5,columnspan=4)
 e1.grid(row=5,column=1,rowspan=2,columnspan=8)
-#https://www.programiz.com/python-programming/examples/conversion-binary-octal-hexadecimal#:~:text=%23%20Python%20program%20to%20convert%20decimal,%2C%20%22in%20hexadecimal.%22)
 
 win.mainloop()
