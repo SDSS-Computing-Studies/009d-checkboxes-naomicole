@@ -65,26 +65,66 @@ def binary_to_decimal(binary):
 def decimal_to_binary(decimal):
     # decimal is an integer value
     # binary is a list of length 8 that contains 1's and 0's
+    decimal = decimal
+    v1 = 0
+    v2 = 0
+    v3 = 0
+    v4 = 0
+    v5 = 0
+    v6 = 0
+    v7 = 0
+    v8 = 0
 
-    binary = bin(decimal)
+    if decimal >= 128:
+        v1 = 1
+        decimal = decimal - 128
+    if decimal >= 64:
+        v2 = 1
+        decimal = decimal - 64
+    if decimal >= 32:
+        v3 = 1
+        decimal = decimal - 32
+    if decimal >= 16:
+        v4 = 1
+        decimal = decimal - 16
+    if decimal >= 8:
+        v5 = 1
+        decimal = decimal - 8
+    if decimal >= 4:
+        v6 = 1
+        decimal = decimal - 4
+    if decimal >= 2:
+        v7 = 1
+        decimal = decimal - 2
+    if decimal >= 1:
+        v8 = 1
+        decimal = decimal - 1
+
+    binary = [v8, v7, v6, v5, v4, v3, v2, v1]
+
     return binary
 
 def get_binary():
     # function should read the entry widget and generate an integer
     # this integer will be used as an input parameter for decimal to binary and the result updated
     # in the 8 checkboxes
-
     decimal = int(e1.get())
 
     binary = decimal_to_binary(decimal)
-    e1.delete(0,END)
-    e1.insert(0,binary)
-
+    
+    ch1.set(binary[0])
+    ch2.set(binary[1])
+    ch3.set(binary[2])
+    ch4.set(binary[3])
+    ch5.set(binary[4])
+    ch6.set(binary[5])
+    ch7.set(binary[6])
+    ch8.set(binary[7])
+    
 def get_decimal():
     # function should read the checkboxes and generate a tuple called binary of length 8 that has 1's and 0's
     # this tuple will be used as an input parameter for binary_to_decimal and the result updated
     # in the entry box
-
     binary = []
 
     binary.append(ch8.get())
