@@ -16,7 +16,6 @@ here
 Use assignment_test.py to test your functions
 """
 
-
 import tkinter as tk 
 from tkinter import *
 
@@ -139,8 +138,6 @@ def get_decimal():
     decimal = binary_to_decimal(binary)
     e1.delete(0,END)
     e1.insert(0,decimal)
-
- 
 
 l1 = Label(win,text="Binary / Decimal Converter!")
 cb1 = Checkbutton(win,variable=ch8)
